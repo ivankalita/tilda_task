@@ -1,0 +1,62 @@
+@import '../utils/colors.styl'
+
+
+.button
+    display inline-block
+    text-transform uppercase
+    line-height 32px
+    paddingLeftRight(28px)
+    border 1px solid $greyMain
+    border-radius 2px
+    transition all .2s ease
+    cursor pointer
+    &:hover
+        background $greyMain
+        color $white
+
+.busket
+    display inline-block
+    position relative
+    cursor pointer
+    &-point
+        position absolute
+        height 10px
+        width 10px
+        bottom 0
+        right -3px
+        background red
+        border-radius 50%
+
+
+
+.pagination-proccess
+    display flex
+    justify-content space-between
+    align-items center
+    &__line
+        flex-grow 1
+        display inline-block
+        height 1px
+        marginLeftRight(20px)
+        background $greyMain
+    &__item
+        display inline-block
+        flex-grow 0
+        flex-basis 1
+        height 20px
+        width 20px
+        border-radius 2px
+        border 1px solid $greyMain
+        transform rotate(45deg)
+        transform-origin center
+        cursor pointer
+        transition all .5s ease
+        // &:not(:last-child):after
+        //     content ''
+        //     display inline-block
+        //     flex-grow 1
+        //     height 1px
+        //     width 100%
+        //     background $greyMain
+        &.active
+            background $greyMain

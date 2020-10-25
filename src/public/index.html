@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+    <div class="LAYOUT-APP">
+        <header class="header">
+            <div class="busket">
+                <img class="busket-icon" src="assets/icons/busket.svg" alt="">
+                <div class="busket-point"></div>
+            </div>
+        </header>
+        <div class="body-custom-lenta">
+            <div class="order-pipline" order-pip="main">
+                <section class="page-block">
+                    <div class="page-block__title">
+                    </div>
+                    <div class="page-block__body"></div>
+                </section>
+                <section class="page-block">
+                    <div class="page-block__title">Second page</div>
+                    <div class="page-block__body"></div>
+                </section>
+                <section class="page-block">
+                    <div class="page-block__title">Third page</div>
+                    <div class="page-block__body"></div>
+                </section>
+                <section class="page-block">
+                    <div class="page-block__title">Fourth page</div>
+                    <div class="page-block__body"></div>
+                </section>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-act footer-act--prev">
+                <button class="button">Назад</button>
+            </div>
+            <div class="footer-nav">
+                <ul class="pagination-proccess" order-pip="main">
+                    <li class="pagination-proccess__item active"></li>
+                    <span class="pagination-proccess__line"></span>
+                    <li class="pagination-proccess__item"></li>
+                    <span class="pagination-proccess__line"></span>
+                    <li class="pagination-proccess__item"></li>
+                    <span class="pagination-proccess__line"></span>
+                    <li class="pagination-proccess__item"></li>
+                </ul>
+            </div>
+            <div class="footer-act footer-act--next">
+                <button class="button">Далее</button>
+            </div>
+        </footer>
+    </div>
+    
+</body>
+</html>
