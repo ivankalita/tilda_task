@@ -4,6 +4,30 @@
     transition all .5s ease
 
 .page-block
+    position relative
     height 100%
+    z-index 0
+    transition all .5s ease
     &__title
+        paddingTopBottom(40px)
+        Montserrat()
+        font-weight 300
+        font-size $fontTitle
+        text-align center
+        line-height 120%
+    &__body
+        // height 100%
+        paddingTopBottom(40px, 0)
+        // overflow-y auto
+        .row
+            display flex
+            flex-wrap wrap
+            &--card-items
+                justify-content space-between
+                .col
+                    margin-bottom 120px
+                    flex 1 0 (100/2)%
+                    @media screen and (max-width 1600px)
+                        flex 1 0 (100/2)%
+
         

@@ -1,18 +1,25 @@
-@import '../utils/colors.styl'
-
-
 .button
     display inline-block
     text-transform uppercase
     line-height 32px
-    paddingLeftRight(28px)
+    paddingLeftRight(24px)
     border 1px solid $greyMain
     border-radius 2px
     transition all .2s ease
     cursor pointer
-    &:hover
-        background $greyMain
-        color $white
+    color $white
+    &--outline
+        background $white
+        color $black
+        &:hover
+            background $greyMain
+            color $white
+            &.button--del
+                background $red
+    &--del
+        border-color $red
+        background $red
+
 
 .busket
     display inline-block

@@ -1,25 +1,33 @@
 @import 'utils/fonts.styl'
 @import 'utils/mixins.styl'
 @import 'utils/reset.styl'
+@import 'utils/vars.styl'
 
 @import 'comps/header.styl'
 @import 'comps/footer.styl'
 @import 'comps/page_block.styl'
 @import 'comps/ui_kit.styl'
+@import 'comps/card_item.styl'
 
 
 *
-    font-family Montserrat
+    Montserrat()
+    box-sizing border-box
+    color $black
+
 
 .LAYOUT-APP
     display flex
     max-height 100vh
-    height 100vh
+    max-width 1600px
+    height 100%
     paddingLeftRight(60px)
+    marginLeftRight(auto)
     flex-direction column
-    overflow hidden
+    overflow hidden auto
 
 .body-custom-lenta
     position relative
     flex-grow 1
+    padding-bottom 100px
     overflow hidden

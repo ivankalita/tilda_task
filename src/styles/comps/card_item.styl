@@ -1,0 +1,52 @@
+.card-item
+    display flex
+    & > *
+        Montserrat()
+    &__image
+        margin-right 60px
+    &__info
+        max-width 300px
+        width 100%
+        .title
+            padding-bottom 25px
+            font-size $fontSubtitle
+            border-bottom 1px solid $greyLight
+        .descr
+        .extra
+            paddingTopBottom(25px)
+            border-bottom 1px solid $greyLight
+            &-item
+                display flex
+                &:not(:last-child)
+                    margin-bottom 10px
+                &__property
+                    flex 0 0 60%
+                &__value
+                    white-space nowrap
+        .counter
+            display flex
+            align-items center
+            paddingTopBottom(25px)
+            border-bottom 1px solid $greyLight
+            &-panel
+                display flex
+                flex 0 0 60%
+                align-items center
+                &__label
+                    marginLeftRight(30px)
+                &__descr
+                &__incr
+                    cursor pointer
+                    transition all .2s ease
+                    & > *
+                        stroke $greyLight
+                    &:hover
+                        & > *
+                            stroke $greyMain
+        .total
+            display flex
+            paddingTopBottom(25px)
+            &-label
+                flex 0 0 60%
+        .actions
+            margin-top 35px

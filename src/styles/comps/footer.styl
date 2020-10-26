@@ -1,16 +1,20 @@
 .footer
-    position relative
-    display flex
-    height 100%
-    align-items center
+    position absolute
+    bottom 0
+    left 0
+    right 0
+    height 100px
+    // marginLeftRight(100px)
     flex 0 0 100px
+    background $white
+    z-index 10
     &-nav
         max-width 600px
         width 100%
         marginLeftRight(auto)
-    &-act
-        position absolute
-        &--next
-            right 0
-        &--prev
-            left 0
+    &-wrapper
+        display flex
+        height 100%
+        max-width 1200px
+        marginLeftRight(auto)
+        align-items center

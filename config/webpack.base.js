@@ -45,6 +45,27 @@ module.exports = {
                 }
             },
             {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader
+                    },
+                    {
+                        loader: 'css-loader',
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: true,
+                            postcssOptions: {
+                                config: `${PATH.cfg}/postcss.config.js`
+                            }
+                        }
+                    },
+
+                ]
+            },
+            {
                 test: /\.styl$/,
                 use: [
                     {
@@ -109,6 +130,10 @@ module.exports = {
                 {
                     from: `${PATH.src}/assets/icons/`,
                     to: `${PATH.dst}/assets/icons/`
+                },
+                {
+                    from: `${PATH.src}/assets/images/`,
+                    to: `${PATH.dst}/assets/images/`
                 }
             ],
         }),
