@@ -8,7 +8,7 @@ export default function OrderPipline(options) {
         isAnimationScroll = false,
         currentPage = 0;
 
-
+    calcWidthPage();
     function calcWidthPage() {
         let frameSize = frame.getBoundingClientRect();
 
@@ -41,6 +41,7 @@ export default function OrderPipline(options) {
                     pageBlock.style.marginTop = `${currentMargin + event.wheelDelta}px`;
                     pageBlock.setAttribute('current-offset', currentOffset + event.wheelDelta)
                 } else {
+                    console.log(currentMargin - (diff - Math.abs(currentOffset)))
                     pageBlock.style.marginTop = `${currentMargin - (diff - Math.abs(currentOffset))}px`;
                     pageBlock.setAttribute('current-offset', currentOffset - (diff - Math.abs(currentOffset)))
                 }
@@ -64,8 +65,6 @@ export default function OrderPipline(options) {
         })
         
     })
-
-    calcWidthPage();
 
     this.getCountPages = () => pages.length;
     this.getCurrentPage = () => currentPage;

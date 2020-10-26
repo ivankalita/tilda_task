@@ -1,0 +1,152 @@
+
+/*
+  __  .___________. _______ .___  ___. 
+ |  | |           ||   ____||   \/   | 
+ |  | `---|  |----`|  |__   |  \  /  | 
+ |  |     |  |     |   __|  |  |\/|  | 
+ |  |     |  |     |  |____ |  |  |  | 
+ |__|     |__|     |_______||__|  |__| 
+                                       
+*/
+
+.card-item
+    display flex
+    justify-content center
+    & > *
+        Montserrat()
+    &__image
+        margin-right 60px
+    &__info
+        max-width 300px
+        width 100%
+        .title
+            padding-bottom 25px
+            font-size $fontSubtitle
+            border-bottom 1px solid $greyLight
+        .descr
+        .extra
+            paddingTopBottom(25px)
+            border-bottom 1px solid $greyLight
+            &-item
+                display flex
+                &:not(:last-child)
+                    margin-bottom 10px
+                &__property
+                    flex 0 0 60%
+                &__value
+                    white-space nowrap
+        .counter
+            display flex
+            align-items center
+            paddingTopBottom(25px)
+            border-bottom 1px solid $greyLight
+            &-panel
+                display flex
+                flex 0 0 60%
+                align-items center
+                &__label
+                    marginLeftRight(30px)
+                &__descr
+                &__incr
+                    cursor pointer
+                    transition all .2s ease
+                    & > *
+                        stroke $greyLight
+                    &:hover
+                        & > *
+                            stroke $greyMain
+        .total
+            display flex
+            paddingTopBottom(25px)
+            &-label
+                flex 0 0 60%
+        .actions
+            margin-top 35px
+
+/*
+  _______   _______  __       __  ____    ____  _______ .______     ____    ____ 
+ |       \ |   ____||  |     |  | \   \  /   / |   ____||   _  \    \   \  /   / 
+ |  .--.  ||  |__   |  |     |  |  \   \/   /  |  |__   |  |_)  |    \   \/   /  
+ |  |  |  ||   __|  |  |     |  |   \      /   |   __|  |      /      \_    _/   
+ |  '--'  ||  |____ |  `----.|  |    \    /    |  |____ |  |\  \----.   |  |     
+ |_______/ |_______||_______||__|     \__/     |_______|| _| `._____|   |__|     
+                                                                                 
+*/
+
+.card-delivery
+    display flex
+    height 100%
+    & > *
+        Montserrat()
+    &__image
+        margin-right 60px
+    &__info
+        display flex
+        flex-direction column
+        max-width 300px
+        width 100%
+        .title
+            padding-bottom 25px
+            font-size $fontSubtitle
+            border-bottom 1px solid $greyLight
+        .descr
+            flex-grow 1
+            paddingTopBottom(25px)
+            font-size $fontSubtitle
+            border-bottom 1px solid $greyLight
+        .extra
+            paddingTopBottom(25px)
+            &-item
+                display flex
+                &:not(:last-child)
+                    margin-bottom 10px
+                &__property
+                    flex 0 0 60%
+                &__value
+                    white-space nowrap
+        .actions
+            padding-top 35px
+    &[selected]
+        .actions
+            .button
+                background $green !important
+                color $white !important
+
+
+/*
+ .______      ___   ____    ____ .___  ___.  _______ .__   __. .___________.
+ |   _  \    /   \  \   \  /   / |   \/   | |   ____||  \ |  | |           |
+ |  |_)  |  /  ^  \  \   \/   /  |  \  /  | |  |__   |   \|  | `---|  |----`
+ |   ___/  /  /_\  \  \_    _/   |  |\/|  | |   __|  |  . `  |     |  |     
+ |  |     /  _____  \   |  |     |  |  |  | |  |____ |  |\   |     |  |     
+ | _|    /__/     \__\  |__|     |__|  |__| |_______||__| \__|     |__|     
+                                                                            
+*/
+
+.card-payment
+    display flex
+    height 100%
+    & > *
+        Montserrat()
+    &__image
+        margin-right 60px
+    &__info
+        display flex
+        flex-direction column
+        max-width 300px
+        width 100%
+        .title
+            padding-bottom 25px
+            font-size $fontSubtitle
+            border-bottom 1px solid $greyLight
+        .descr
+            flex-grow 1
+            paddingTopBottom(25px)
+            font-size $fontSubtitle
+        .actions
+            padding-top 35px
+    &[selected]
+        .actions
+            .button
+                background $green !important
+                color $white !important

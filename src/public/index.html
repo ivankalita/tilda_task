@@ -9,8 +9,8 @@
     <div class="LAYOUT-APP">
         <header class="header">
             <div class="busket">
-                <img class="busket-icon" src="assets/icons/busket.svg" alt="">
-                <div class="busket-point"></div>
+                <img class="busket-icon" src="assets/icons/busket.svg">
+                <div class="busket-point" id="totalCountItems">6</div>
             </div>
         </header>
         <div class="body-custom-lenta">
@@ -67,7 +67,7 @@
                                         </ul>
                                         <div class="total">
                                             <div class="total-label">Итог</div>
-                                            <div class="totab-price">920$</div>
+                                            <div class="total-price">920$</div>
                                         </div>
                                         <div class="actions">
                                             <button class="button button--del">Удалить</button>
@@ -123,7 +123,7 @@
                                         </ul>
                                         <div class="total">
                                             <div class="total-label">Итог</div>
-                                            <div class="totab-price">920$</div>
+                                            <div class="total-price">920$</div>
                                         </div>
                                         <div class="actions">
                                             <button class="button button--del">Удалить</button>
@@ -179,7 +179,7 @@
                                         </ul>
                                         <div class="total">
                                             <div class="total-label">Итог</div>
-                                            <div class="totab-price">920$</div>
+                                            <div class="total-price">920$</div>
                                         </div>
                                         <div class="actions">
                                             <button class="button button--del">Удалить</button>
@@ -235,7 +235,7 @@
                                         </ul>
                                         <div class="total">
                                             <div class="total-label">Итог</div>
-                                            <div class="totab-price">920$</div>
+                                            <div class="total-price">920$</div>
                                         </div>
                                         <div class="actions">
                                             <button class="button button--del">Удалить</button>
@@ -291,7 +291,7 @@
                                         </ul>
                                         <div class="total">
                                             <div class="total-label">Итог</div>
-                                            <div class="totab-price">920$</div>
+                                            <div class="total-price">920$</div>
                                         </div>
                                         <div class="actions">
                                             <button class="button button--del">Удалить</button>
@@ -347,7 +347,7 @@
                                         </ul>
                                         <div class="total">
                                             <div class="total-label">Итог</div>
-                                            <div class="totab-price">920$</div>
+                                            <div class="total-price">920$</div>
                                         </div>
                                         <div class="actions">
                                             <button class="button button--del">Удалить</button>
@@ -358,17 +358,272 @@
                         </div>
                     </div>
                 </section>
-                <section class="page-block">
-                    <div class="page-block__title">Second page</div>
-                    <div class="page-block__body"></div>
+                <section class="page-block" current-offset="0">
+                    <div class="page-block__title">2. Проверьте Ваши данные</div>
+                    <div class="page-block__body">
+                        <div class="user-card">
+                            <ul class="user-card__info">
+                                <li class="item">
+                                    <div class="item-property item-property--fio">Иванов Иван Иванович</div>
+                                    <svg class="item-edit" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z"/>
+                                        <path d="M10.925 6.31255L12.1625 5.07505C12.2125 5.02505 12.2125 4.95005 12.1625 4.90005L11.1 3.83755C11.05 3.78755 10.975 3.78755 10.925 3.83755L9.6875 5.07505L10.925 6.31255Z" fill="white"/>
+                                        <path d="M9.32496 5.4375L4.74996 10.0125L4.19996 11.6375C4.16246 11.7375 4.26246 11.825 4.36246 11.8L5.98746 11.25L10.5625 6.675L9.32496 5.4375Z" fill="white"/>
+                                    </svg>
+                                </li>
+                            </ul>
+                            <ul class="user-card__info">
+                                <li class="item">
+                                    <div class="item-property">Телефон</div>
+                                    <div class="item-value">+7 (996) 000 99 00</div>
+                                    <svg class="item-edit" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z"/>
+                                        <path d="M10.925 6.31255L12.1625 5.07505C12.2125 5.02505 12.2125 4.95005 12.1625 4.90005L11.1 3.83755C11.05 3.78755 10.975 3.78755 10.925 3.83755L9.6875 5.07505L10.925 6.31255Z" fill="white"/>
+                                        <path d="M9.32496 5.4375L4.74996 10.0125L4.19996 11.6375C4.16246 11.7375 4.26246 11.825 4.36246 11.8L5.98746 11.25L10.5625 6.675L9.32496 5.4375Z" fill="white"/>
+                                    </svg>
+                                </li>
+                                <li class="item">
+                                    <div class="item-property">Почта</div>
+                                    <div class="item-value">mail@mail.ru</div>
+                                    <svg class="item-edit" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z"/>
+                                        <path d="M10.925 6.31255L12.1625 5.07505C12.2125 5.02505 12.2125 4.95005 12.1625 4.90005L11.1 3.83755C11.05 3.78755 10.975 3.78755 10.925 3.83755L9.6875 5.07505L10.925 6.31255Z" fill="white"/>
+                                        <path d="M9.32496 5.4375L4.74996 10.0125L4.19996 11.6375C4.16246 11.7375 4.26246 11.825 4.36246 11.8L5.98746 11.25L10.5625 6.675L9.32496 5.4375Z" fill="white"/>
+                                    </svg>
+                                </li>
+                            </ul>
+                            <ul class="user-card__info">
+                                <li class="item">
+                                    <div class="item-property item-property--address">Адрес доставки</div>
+                                </li>
+                                <li class="item">
+                                    <div class="item-property">Страна</div>
+                                    <div class="item-value">Россия</div>
+                                    <svg class="item-edit" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z"/>
+                                        <path d="M10.925 6.31255L12.1625 5.07505C12.2125 5.02505 12.2125 4.95005 12.1625 4.90005L11.1 3.83755C11.05 3.78755 10.975 3.78755 10.925 3.83755L9.6875 5.07505L10.925 6.31255Z" fill="white"/>
+                                        <path d="M9.32496 5.4375L4.74996 10.0125L4.19996 11.6375C4.16246 11.7375 4.26246 11.825 4.36246 11.8L5.98746 11.25L10.5625 6.675L9.32496 5.4375Z" fill="white"/>
+                                    </svg>
+                                </li>
+                                <li class="item">
+                                    <div class="item-property">Город</div>
+                                    <div class="item-value">Москва</div>
+                                    <svg class="item-edit" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z"/>
+                                        <path d="M10.925 6.31255L12.1625 5.07505C12.2125 5.02505 12.2125 4.95005 12.1625 4.90005L11.1 3.83755C11.05 3.78755 10.975 3.78755 10.925 3.83755L9.6875 5.07505L10.925 6.31255Z" fill="white"/>
+                                        <path d="M9.32496 5.4375L4.74996 10.0125L4.19996 11.6375C4.16246 11.7375 4.26246 11.825 4.36246 11.8L5.98746 11.25L10.5625 6.675L9.32496 5.4375Z" fill="white"/>
+                                    </svg>
+                                </li>
+                                <li class="item">
+                                    <div class="item-property">Улица</div>
+                                    <div class="item-value">Алтуфьево</div>
+                                    <svg class="item-edit" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z"/>
+                                        <path d="M10.925 6.31255L12.1625 5.07505C12.2125 5.02505 12.2125 4.95005 12.1625 4.90005L11.1 3.83755C11.05 3.78755 10.975 3.78755 10.925 3.83755L9.6875 5.07505L10.925 6.31255Z" fill="white"/>
+                                        <path d="M9.32496 5.4375L4.74996 10.0125L4.19996 11.6375C4.16246 11.7375 4.26246 11.825 4.36246 11.8L5.98746 11.25L10.5625 6.675L9.32496 5.4375Z" fill="white"/>
+                                    </svg>
+                                </li>
+                                <li class="item">
+                                    <div class="item-property">Дом</div>
+                                    <div class="item-value">10</div>
+                                    <svg class="item-edit" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z"/>
+                                        <path d="M10.925 6.31255L12.1625 5.07505C12.2125 5.02505 12.2125 4.95005 12.1625 4.90005L11.1 3.83755C11.05 3.78755 10.975 3.78755 10.925 3.83755L9.6875 5.07505L10.925 6.31255Z" fill="white"/>
+                                        <path d="M9.32496 5.4375L4.74996 10.0125L4.19996 11.6375C4.16246 11.7375 4.26246 11.825 4.36246 11.8L5.98746 11.25L10.5625 6.675L9.32496 5.4375Z" fill="white"/>
+                                    </svg>
+                                </li>
+                                <li class="item">
+                                    <div class="item-property">Корпус</div>
+                                    <div class="item-value item-value--empty"></div>
+                                    <svg class="item-edit" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z"/>
+                                        <path d="M10.925 6.31255L12.1625 5.07505C12.2125 5.02505 12.2125 4.95005 12.1625 4.90005L11.1 3.83755C11.05 3.78755 10.975 3.78755 10.925 3.83755L9.6875 5.07505L10.925 6.31255Z" fill="white"/>
+                                        <path d="M9.32496 5.4375L4.74996 10.0125L4.19996 11.6375C4.16246 11.7375 4.26246 11.825 4.36246 11.8L5.98746 11.25L10.5625 6.675L9.32496 5.4375Z" fill="white"/>
+                                    </svg>
+                                </li>
+                                <li class="item">
+                                    <div class="item-property">Квартира</div>
+                                    <div class="item-value">30</div>
+                                    <svg class="item-edit" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z"/>
+                                        <path d="M10.925 6.31255L12.1625 5.07505C12.2125 5.02505 12.2125 4.95005 12.1625 4.90005L11.1 3.83755C11.05 3.78755 10.975 3.78755 10.925 3.83755L9.6875 5.07505L10.925 6.31255Z" fill="white"/>
+                                        <path d="M9.32496 5.4375L4.74996 10.0125L4.19996 11.6375C4.16246 11.7375 4.26246 11.825 4.36246 11.8L5.98746 11.25L10.5625 6.675L9.32496 5.4375Z" fill="white"/>
+                                    </svg>
+                                </li>
+                                <li class="item">
+                                    <div class="item-property">Индекс</div>
+                                    <div class="item-value">131595</div>
+                                    <svg class="item-edit" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z"/>
+                                        <path d="M10.925 6.31255L12.1625 5.07505C12.2125 5.02505 12.2125 4.95005 12.1625 4.90005L11.1 3.83755C11.05 3.78755 10.975 3.78755 10.925 3.83755L9.6875 5.07505L10.925 6.31255Z" fill="white"/>
+                                        <path d="M9.32496 5.4375L4.74996 10.0125L4.19996 11.6375C4.16246 11.7375 4.26246 11.825 4.36246 11.8L5.98746 11.25L10.5625 6.675L9.32496 5.4375Z" fill="white"/>
+                                    </svg>
+                                </li>
+                            </ul>
+                            <ul class="user-card__info">
+                                <li class="item">
+                                    <div class="item-property item-property--address">Способ оплаты</div>
+                                </li>
+                                <li class="item">
+                                    <div class="item-property">MaterCard</div>
+                                    <div class="item-value">****0825</div>
+                                    <svg class="item-edit" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z"/>
+                                        <path d="M10.925 6.31255L12.1625 5.07505C12.2125 5.02505 12.2125 4.95005 12.1625 4.90005L11.1 3.83755C11.05 3.78755 10.975 3.78755 10.925 3.83755L9.6875 5.07505L10.925 6.31255Z" fill="white"/>
+                                        <path d="M9.32496 5.4375L4.74996 10.0125L4.19996 11.6375C4.16246 11.7375 4.26246 11.825 4.36246 11.8L5.98746 11.25L10.5625 6.675L9.32496 5.4375Z" fill="white"/>
+                                    </svg>
+                                </li>
+                            </ul>
+                            <div class="user-card__action">
+                                <button class="button button--outline">Добавить</button>
+                            </div>
+                        </div>
+                    </div>
                 </section>
                 <section class="page-block">
-                    <div class="page-block__title">Third page</div>
-                    <div class="page-block__body"></div>
+                    <div class="page-block__title">3. Выберите способ доставки</div>
+                    <div class="page-block__body">
+                        <div class="row row--card-delivery">
+                            <div class="col">
+                                <div class="card-delivery">
+                                    <div class="card-delivery__image">
+                                        <img src="assets/images/ship.png">
+                                    </div>
+                                    <div class="card-delivery__info">
+                                        <div class="title">Морем</div>
+                                        <div class="descr">
+                                            В море одна лишь волна — быстротечная.<br>
+                                            В небе одна лишь звезда — бесконечная.<br>
+                                            В мире одна лишь душа — вечная.
+                                        </div>
+                                        <ul class="extra">
+                                            <li class="extra-item">
+                                                <div class="extra-item__property">Срок доставки</div>
+                                                <div class="extra-item__value">до 20 суток</div>
+                                            </li>
+                                            <li class="extra-item">
+                                                <div class="extra-item__property">Цена</div>
+                                                <div class="extra-item__value">до 100$</div>
+                                            </li>
+                                        </ul>
+                                        <div class="actions">
+                                            <button class="button button--outline button--success">Выбрать</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card-delivery">
+                                    <div class="card-delivery__image">
+                                        <img src="assets/images/plane.png">
+                                    </div>
+                                    <div class="card-delivery__info">
+                                        <div class="title">Авиа</div>
+                                        <div class="descr">
+                                            Сколько их над планетой? Бессчетно.
+                                            И над тропиками, и над полюсом…
+                                            Но ни бога нет и ни черта, и поэтому чуточку боязно.
+                                        </div>
+                                        <ul class="extra">
+                                            <li class="extra-item">
+                                                <div class="extra-item__property">Срок доставки</div>
+                                                <div class="extra-item__value">до 10 суток</div>
+                                            </li>
+                                            <li class="extra-item">
+                                                <div class="extra-item__property">Цена</div>
+                                                <div class="extra-item__value">до 300$</div>
+                                            </li>
+                                        </ul>
+                                        <div class="actions">
+                                            <button class="button button--outline button--success">Выбрать</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card-delivery">
+                                    <div class="card-delivery__image">
+                                        <img src="assets/images/space.png">
+                                    </div>
+                                    <div class="card-delivery__info">
+                                        <div class="title">Космо</div>
+                                        <div class="descr">
+                                            Это что-то новенькое... Обязательно попробуйте :)
+                                        </div>
+                                        <ul class="extra">
+                                            <li class="extra-item">
+                                                <div class="extra-item__property">Срок доставки</div>
+                                                <div class="extra-item__value">до 1 св. года</div>
+                                            </li>
+                                            <li class="extra-item">
+                                                <div class="extra-item__property">Цена</div>
+                                                <div class="extra-item__value">до 1 млн. $</div>
+                                            </li>
+                                        </ul>
+                                        <div class="actions">
+                                            <button class="button button--outline button--success">Выбрать</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
                 <section class="page-block">
-                    <div class="page-block__title">Fourth page</div>
-                    <div class="page-block__body"></div>
+                    <div class="page-block__title">4. Выберите способ оплаты</div>
+                    <div class="page-block__body">
+                        <div class="row row--card-payment">
+                            <div class="col">
+                                <div class="card-payment" selected>
+                                    <div class="card-payment__image">
+                                        <img src="assets/images/mastercard.png">
+                                    </div>
+                                    <div class="card-payment__info">
+                                        <div class="title">MasterCard</div>
+                                        <div class="descr">Ваш выбор!</div>
+                                        <div class="actions">
+                                            <button class="button button--outline button--success">Выбрано</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card-payment">
+                                    <div class="card-payment__image">
+                                        <img src="assets/images/visa.png">
+                                    </div>
+                                    <div class="card-payment__info">
+                                        <div class="title">Visa</div>
+                                        <div class="descr">
+                                            Американская транснациональная компания, 
+                                            предоставляющая услуги проведения платёжных операций
+                                        </div>
+                                        <div class="actions">
+                                            <button class="button button--outline button--success">Выбрать</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card-payment">
+                                    <div class="card-payment__image">
+                                        <img src="assets/images/paypal.png">
+                                    </div>
+                                    <div class="card-payment__info">
+                                        <div class="title">PayPal</div>
+                                        <div class="descr">
+                                            Крупнейшая дебетовая электронная платёжная система. 
+                                            Позволяет клиентам оплачивать счета и покупки, 
+                                            отправлять и принимать денежные переводы
+                                        </div>
+                                        <div class="actions">
+                                            <button class="button button--outline button--success">Выбрать</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>
