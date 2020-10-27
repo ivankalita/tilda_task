@@ -13,6 +13,8 @@ export default function OrderPipline(options) {
 
         pages.forEach((page, index) => {
             page.style.width = frameSize.width + 'px'
+
+            console.log(frameSize.width)
             if (currentPage !== index) page.querySelector('.page-block__body').classList.remove('active')
             else page.querySelector('.page-block__body').classList.add('active');
         });

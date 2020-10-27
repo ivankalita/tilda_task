@@ -7,8 +7,8 @@ import './scripts/counter';
 import './styles/index.styl';
 import 'reset-css'
 
-let LAYOUT = document.querySelector('.LAYOUT-APP');
-let footer = document.querySelector('footer.footer');
+let footer = document.querySelector('footer.footer'),
+    initialFooterOffset = footer.offsetTop;
 
 
 let pipline = new OrderPipline({
@@ -23,6 +23,10 @@ let delivery = new Delivery({
     el: document.querySelector('.row.row--card-delivery')
 })
 
+let payment = new Payment({
+    el: document.querySelector('.row.row--card-payment')
+})
+
 delivery.el.addEventListener('selected', event => {
     delivery.getAllDeliveries().forEach((item, id) => {
         delivery.setDeselected(id);
@@ -30,10 +34,6 @@ delivery.el.addEventListener('selected', event => {
             delivery.setSelected(id);
         }
     })
-})
-
-let payment = new Payment({
-    el: document.querySelector('.row.row--card-payment')
 })
 
 payment.el.addEventListener('selected', event => {
@@ -54,12 +54,9 @@ busket.el.addEventListener('removeBusketItem', event => {
     else counter.style.display = 'none'
 })
 
-let initialFooterOffset = footer.offsetTop;
-
 window.addEventListener('scroll', () => {
     footer.style.top = `${initialFooterOffset + window.pageYOffset}px`
 })
-
 
 document.getElementById('startShoping').addEventListener('click', (event) => {
     document.querySelector('.footer-nav').setAttribute('active', '')
@@ -117,7 +114,6 @@ document.getElementById('nextPage').addEventListener('click', event => {
     }
     pipline.updatePagesSizes()
 })
-
 
 footer.addEventListener('changePage', event => {
     if (event.detail.to === pipline.getCountPages() - 1) {
