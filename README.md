@@ -16,4 +16,4 @@
 ## Дополнительно
 
 + прелоадер на прогрузку последней страницы
-+ добить стартовую страницу - [Figma](https://www.figma.com/file/ImMZF23TpU4aaXhRNs2Sp3/Tilda.test?node-id=1%3A13)
++ Диз - [Figma](https://www.figma.com/file/ImMZF23TpU4aaXhRNs2Sp3/Tilda.test?node-id=1%3A13)
