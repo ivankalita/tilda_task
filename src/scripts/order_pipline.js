@@ -5,52 +5,22 @@ export default function OrderPipline(options) {
         pages = el.querySelectorAll('.page-block'),
         nav = document.querySelector(`.pagination-proccess[order-pip=${name}]`),
         navItems = nav.querySelectorAll('.pagination-proccess__item'),
-        isAnimationScroll = false,
         currentPage = 0;
 
-    calcWidthPage();
-    function calcWidthPage() {
+    calcPageSizes();
+    function calcPageSizes() {
         let frameSize = frame.getBoundingClientRect();
 
-        pages.forEach(page => {
+        pages.forEach((page, index) => {
             page.style.width = frameSize.width + 'px'
-            
+            if (currentPage !== index) page.querySelector('.page-block__body').classList.remove('active')
+            else page.querySelector('.page-block__body').classList.add('active');
         });
 
         el.style.width = pages.length * frameSize.width + 'px'
     }
 
-    window.addEventListener('resize', calcWidthPage)
-
-    el.addEventListener('mousewheel', event => {
-        if (!isAnimationScroll) {
-            isAnimationScroll = true;
-
-            let pageBlock = event.target.closest('.page-block[current-offset]'),
-                currentOffset = +pageBlock.getAttribute('current-offset'),
-                currentMargin = parseInt(getComputedStyle(pageBlock).marginTop),
-                diff = pageBlock.getBoundingClientRect().height - frame.getBoundingClientRect().height;
-    
-            if (event.wheelDelta > 0 && currentMargin < 0) {
-                console.log(event.wheelDelta)
-                pageBlock.style.marginTop = `${currentMargin + event.wheelDelta}px`
-                pageBlock.setAttribute('current-offset', currentOffset + event.wheelDelta)
-    
-            } else if (event.wheelDelta < 0 && diff > Math.abs(currentOffset)) {
-                if (diff - Math.abs(currentOffset) > Math.abs(event.wheelDelta)) {
-                    pageBlock.style.marginTop = `${currentMargin + event.wheelDelta}px`;
-                    pageBlock.setAttribute('current-offset', currentOffset + event.wheelDelta)
-                } else {
-                    console.log(currentMargin - (diff - Math.abs(currentOffset)))
-                    pageBlock.style.marginTop = `${currentMargin - (diff - Math.abs(currentOffset))}px`;
-                    pageBlock.setAttribute('current-offset', currentOffset - (diff - Math.abs(currentOffset)))
-                }
-            }
-
-            setTimeout(() => isAnimationScroll = false, 500)
-        }
-        
-    })
+    window.addEventListener('resize', calcPageSizes)
 
     nav.addEventListener('click', event => {
         let frameSize = frame.getBoundingClientRect();
@@ -58,8 +28,19 @@ export default function OrderPipline(options) {
         navItems.forEach((item, index) => {
             if (item == event.target) {
                 item.classList.add('active');
+
+                let eventChangePage = new CustomEvent('changePage', {
+                    bubbles: true,
+                    detail: {
+                        from: currentPage,
+                        to: index
+                    }
+                })
+
                 currentPage = index;
-                el.style.marginLeft = `-${frameSize.width * index}px`
+                calcPageSizes()
+                el.style.marginLeft = `-${frameSize.width * index}px`;
+                item.dispatchEvent(eventChangePage);
             }
             else item.classList.remove('active')
         })
@@ -78,4 +59,5 @@ export default function OrderPipline(options) {
             nav.querySelectorAll('.pagination-proccess__item')[currentPage].classList.add('active')
         }
     }
+    this.updatePagesSizes = calcPageSizes
 }

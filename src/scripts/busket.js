@@ -9,7 +9,7 @@ export default function Busket(options) {
     function fillInBusket() {
         itemsEl.forEach((item, index) => {
             items.push({
-                id: index,
+                uniqID: item.querySelector('.descr-item[articul]').textContent,
                 title: item.querySelector('.title').textContent,
                 total: parseFloat(item.querySelector('.total .total-price').textContent)
             })
@@ -17,9 +17,10 @@ export default function Busket(options) {
     }
 
     itemsEl.forEach((item, index) => {
+        // Удаление из корзины
         item.querySelector('.actions .button--del').addEventListener('click', event => {
-            items = items.filter((card, id) => {
-                if (id === index) {
+            items = items.filter(card => {
+                if (card.uniqID === item.querySelector('.descr-item[articul]').textContent) {
                     let eventRemoveItem = new CustomEvent('removeBusketItem', {
                         bubbles: true,
                         detail: {
@@ -28,13 +29,16 @@ export default function Busket(options) {
                         }
                     });
 
-                    console.log(event)
                     item.dispatchEvent(eventRemoveItem)
                     return false;
 
                 } else return true;
             })
         })
+
+        // 
     })
+
+    this.getCountItems = () => items.length;
 
 }

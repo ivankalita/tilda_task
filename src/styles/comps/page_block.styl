@@ -5,6 +5,7 @@
 
 .page-block
     position relative
+    marginLeftRight(60px)
     height 100%
     z-index 0
     transition all .5s ease
@@ -16,9 +17,10 @@
         text-align center
         line-height 120%
     &__body
-        // height 100%
-        paddingTopBottom(40px, 0)
-        // overflow-y auto
+        margin-top 80px
+        display none
+        &.active
+            display block
         .row
             display flex
             flex-wrap wrap
@@ -33,6 +35,8 @@
                 .col
                     margin-bottom 120px
                     flex 1 0 (100/3)%
+            .col
+                paddingLeftRight(15px)
             
 
         

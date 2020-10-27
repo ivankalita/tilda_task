@@ -2,10 +2,14 @@ import OrderPipline from './scripts/order_pipline';
 import Busket from './scripts/busket';
 import Delivery from './scripts/delivery';
 import Payment from './scripts/payment';
-
+import './scripts/counter';
 
 import './styles/index.styl';
 import 'reset-css'
+
+let LAYOUT = document.querySelector('.LAYOUT-APP');
+let footer = document.querySelector('footer.footer');
+
 
 let pipline = new OrderPipline({
     frame: document.querySelector('.body-custom-lenta')
@@ -44,16 +48,85 @@ payment.el.addEventListener('selected', event => {
 busket.el.addEventListener('removeBusketItem', event => {
     event.detail.el.parentNode.remove();
 
-    let counter = document.getElementById('totalCountItems').textContent;
+    let counter = document.getElementById('totalCountItems');
 
-    document.getElementById('totalCountItems').textContent = +counter - 1;
+    if (busket.getCountItems() - 1) counter.textContent = busket.getCountItems() - 1;
+    else counter.style.display = 'none'
 })
 
-document.querySelector('.footer-act--prev').addEventListener('click', event => {
+let initialFooterOffset = footer.offsetTop;
+
+window.addEventListener('scroll', () => {
+    footer.style.top = `${initialFooterOffset + window.pageYOffset}px`
+})
+
+
+document.getElementById('startShoping').addEventListener('click', (event) => {
+    document.querySelector('.footer-nav').setAttribute('active', '')
+    document.querySelector('.body-start').removeAttribute('active')
+    document.querySelector('.body-custom-lenta').setAttribute('active', '')
+    document.getElementById('prevPage').classList.remove('hide')
+    document.getElementById('nextPage').classList.remove('hide')
+    pipline.updatePagesSizes()
+})
+
+document.getElementById('prevPage').addEventListener('click', event => {
     if (pipline.getCurrentPage()) pipline.setCurrentPage(pipline.getCurrentPage() - 1)
+    pipline.updatePagesSizes()
 })
 
-document.querySelector('.footer-act--next').addEventListener('click', event => {
-    if (pipline.getCurrentPage() < pipline.getCountPages()) pipline.setCurrentPage(pipline.getCurrentPage() + 1)
-    else if (pipline.getCurrentPage() === pipline.getCountPages() - 1) event.target.closest('button').textContent = 'Готово'
+document.getElementById('nextPage').addEventListener('click', event => {
+    let counter = document.getElementById('totalCountItems');
+
+    if (pipline.getCurrentPage() === pipline.getCountPages() - 2) {
+        document.getElementById('nextPage').textContent = 'Готово';
+        document.getElementById('nextPage').setAttribute('finished', '')
+        pipline.setCurrentPage(3)
+        pipline.updatePagesSizes()
+        return
+    }
+
+    console.log(pipline.getCurrentPage(), pipline.getCountPages())
+
+    if (event.target.hasAttribute('finished')) {
+        document.querySelector('.body-custom-lenta').removeAttribute('active')
+        document.querySelector('.body-finished').setAttribute('active', '')
+        document.querySelector('.footer-nav').removeAttribute('active')
+        document.querySelector('.footer-finished').setAttribute('active', '')
+        counter.style.display = 'none'
+        document.getElementById('prevPage').classList.add('hide');
+        document.getElementById('nextPage').textContent = 'К покупкам';
+        document.getElementById('nextPage').removeAttribute('finished')
+        document.getElementById('nextPage').setAttribute('reset', '')
+    } else if (event.target.hasAttribute('reset')) {
+        document.querySelector('.body-finished').removeAttribute('active')
+        document.querySelector('.body-custom-lenta').setAttribute('active', '')
+        document.querySelector('.footer-finished').removeAttribute('active')
+        document.querySelector('.footer-nav').setAttribute('active', '')
+        pipline.setCurrentPage(0);
+
+        counter.textContent = busket.getCountItems()
+        counter.style.display = 'inline-block'
+
+        document.getElementById('prevPage').classList.remove('hide');
+        document.getElementById('nextPage').textContent = 'Далее';
+        document.getElementById('nextPage').removeAttribute('reset')
+    }
+    else if (pipline.getCurrentPage() < pipline.getCountPages()) {
+        pipline.setCurrentPage(pipline.getCurrentPage() + 1)
+    }
+    pipline.updatePagesSizes()
 })
+
+
+footer.addEventListener('changePage', event => {
+    if (event.detail.to === pipline.getCountPages() - 1) {
+        document.getElementById('nextPage').textContent = 'Готово';
+        document.getElementById('nextPage').setAttribute('finished', '')
+    }
+    else {
+        document.getElementById('nextPage').textContent = 'Далее';
+        document.getElementById('nextPage').removeAttribute('finished');
+    }
+})
+

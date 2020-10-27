@@ -1,20 +1,27 @@
 .footer
     position absolute
-    bottom 0
+    top calc(100vh - 80px)
     left 0
     right 0
     height 80px
-    // marginLeftRight(100px)
     flex 0 0 80px
     background $white
     z-index 10
     &-nav
-        max-width 600px
+    &-finished
+        display none
         width 100%
         marginLeftRight(auto)
+        text-align center
+        &[active]
+            display block
+    &-nav
+        max-width 600px
     &-wrapper
         display flex
         height 100%
         max-width 1200px
         marginLeftRight(auto)
         align-items center
+        .button.hide
+            opacity 0

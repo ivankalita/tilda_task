@@ -15,19 +15,68 @@
     box-sizing border-box
     color $black
 
+body
+    position relative
+
 
 .LAYOUT-APP
     display flex
-    max-height 100vh
+    min-height 100vh
     max-width 1600px
-    height 100%
     paddingLeftRight(60px)
     marginLeftRight(auto)
     flex-direction column
     overflow hidden auto
 
+
+.body-start
+    display none
+    flex-grow 1
+    align-items center
+    justify-content center
+    Montserrat()
+    padding-bottom 100px
+    &[active]
+        display flex
+
+
+
+
 .body-custom-lenta
     position relative
-    flex-grow 1
+    display none
     padding-bottom 100px
-    overflow hidden
+    Montserrat()
+    &[active]
+        display block
+
+.body-finished
+    display none
+    flex-grow 1
+    flex-flow column nowrap
+    padding-bottom 100px
+    Montserrat()
+    &__title
+        paddingTopBottom(40px, 50px)
+        font-size $fontTitle
+        line-height 120%
+        text-align center
+    &__subtitle
+        font-size $fontSubtitle
+        line-height 120%
+        text-align center
+    &__body
+        display flex
+        flex-grow 1
+        flex-flow column
+        align-items center
+        justify-content center
+        .image
+            margin-bottom 70px
+        .text
+            margin-bottom 25px
+        .timer
+            &-bold
+                font-weight bold
+    &[active]
+        display flex
